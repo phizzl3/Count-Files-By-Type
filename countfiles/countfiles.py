@@ -39,8 +39,6 @@ def display_totals(fdir, fdict) -> None:
     for k, v in fdict.items():
         print(f" {k}: {v}")
 
-    input("\n ENTER to close...")
-
 
 def write_file(fdir, fdict) -> None:
     """
@@ -68,7 +66,10 @@ def main() -> None:
 
     get_counts(directory, files)
     display_totals(directory, files)
-    write_file(directory, files)
+
+    usersel = input("\n Output file? (y/n): ")
+    if usersel.lower() == 'y':
+        write_file(directory, files)
 
 
 if __name__ == "__main__":
