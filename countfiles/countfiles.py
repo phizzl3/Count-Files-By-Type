@@ -1,6 +1,9 @@
 import os
+from pathlib import Path
 
 import dropfile
+
+DLS = Path().home() / 'Downloads'
 
 
 def get_counts(fdir, fdict) -> None:
@@ -42,13 +45,13 @@ def display_totals(fdir, fdict) -> None:
 def write_file(fdir, fdict) -> None:
     """
     Outputs file counts to a text file "file_counts.txt" 
-    located in the current repo folder.
+    located in the User's Downloads folder.
 
     Args:
         fdir (str/pathlib.Path): Directory containing the counted files.
         fdict (dict): Dictionary of file counts.
     """
-    with open('file_counts.txt', 'w') as f:
+    with open(f'{DLS}/file_counts.txt', 'w') as f:
         f.write(f'{fdir}\n')
         f.write('File Counts:\n\n')
         for k, v in fdict.items():
