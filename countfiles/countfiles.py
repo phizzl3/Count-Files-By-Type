@@ -34,8 +34,7 @@ def display_totals(fdir, fdict) -> None:
         fdir (str/pathlib.Path): Directory containing the counted files.
         fdict (dict): Dictionary of file counts.
     """
-    print(f"\n {fdir}")
-    print(" File Counts:\n")
+    print(f"\n {fdir}\n File Counts:\n")
     for k, v in fdict.items():
         print(f" {k}: {v}")
 
