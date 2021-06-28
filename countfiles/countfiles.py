@@ -1,4 +1,6 @@
 import os
+import sys
+
 from pathlib import Path
 
 import dropfile
@@ -58,14 +60,18 @@ def write_file(fdir, fdict) -> None:
 def main() -> None:
     """
     Generates a empty dictionary to use, gets directory of files, 
-    and calls the other needed funcitons. 
+    and calls the other needed functions. 
     """
     files = {}
-    directory = dropfile.get()
+    # Gets directory from terminal input if present, if not get from user
+    try:
+        directory = sys.argv[1]
+    except IndexError:
+        directory = dropfile.get()
 
     get_counts(directory, files)
     display_totals(directory, files)
-
+    # Outputs list of file types to a text file in User's Downloads folder
     usersel = input("\n Output file? (y/n): ")
     if usersel.lower() == 'y':
         write_file(directory, files)
