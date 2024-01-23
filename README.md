@@ -1,4 +1,4 @@
-# CountFiles
+# Count-Files-By-Type
 
  Steps through a directory and outputs a count of each filetype inside.
 
