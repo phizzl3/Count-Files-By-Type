@@ -12,3 +12,11 @@
 ```bash
 $ python3 countfiles
 ```
+
+## Build info
+
+```bash
+pyinstaller -F -n "Count Files By Type" --icon=.\countfiles\icon\count.ico .\countfiles\countfiles.py
+```
+
+Remove -F if one-file causes issues with Windows
