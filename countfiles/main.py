@@ -1,9 +1,20 @@
+"""
+
+Gets a folder via drag-and-drop. Counts the number of files 
+for each file extension, and displays it to the terminal. 
+Optionally outputs a text file with the totals to [USER]/Downloads
+
+"""
+
+__version__ = "1.0.0"
+
 import os
 import sys
 
 from pathlib import Path
 
 import dropfile
+import art
 
 DLS = Path().home() / 'Downloads'
 
@@ -78,4 +89,6 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    art.display_ascii(__version__)
+    print("\n Drop a folder to get a recursive count of file types it contains.")
     main()
